@@ -1,17 +1,18 @@
-#Import os and csv
+# Import os and csv
 import os
 import csv
 
-#Import the csv file
-PyBankcsv = os.path.join("..", "Resources","budget_data.csv")
+# Import the csv file
+PyBankcsv = os.path.join(".", "Resources", "budget_data.csv")
 
-#Define the variables and how they are contained
+# Define the variables and how they are contained
 dates = []
 profit = []
-monthly_change = []
+losses = []
+monthly_changes = []
 
 
-#Start from the beginning of each variable
+# Start from the beginning of each variable
 count = 0
 initial_profit = 0
 final_profit = 0
@@ -19,10 +20,11 @@ total_profit = 0
 total_profit_change = 0
 
 
-#Open PyBank with the CSV
-with open(PyBankcsv, "w", newline="") as csvfile:
+# Open PyBank with the CSV
+with open(PyBankcsv, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    csv_header= next(csvreader)
+
+    header = next(csvreader)
     
     #Start the Loop
     for row in csvreader:
@@ -42,24 +44,24 @@ with open(PyBankcsv, "w", newline="") as csvfile:
         monthly_profit_changes = final_profit - initial_profit
         
         # Add monthly changes to list
-        monthly_change.append(monthly_profit_changes)
+        monthly_changes.append(monthly_profit_changes)
         
         # Declare the list for the calculations
-        total_profit_changes = total_profit_changes + monthly_profit_changes
+        total_profit_change = total_profit_change + monthly_profit_changes
         initial_profit = final_profit
         
         # Calculate avg change
-        average_profit_change = (total_profit_changes/count)
+        average_profit_change = (total_profit_change/count)
         
         # Find the greatest increase and decrease in profits
         greatest_increase = max(monthly_changes)
         greatest_decrease = min(monthly_changes)
         
         # Find the dates of the increase and decrease
-        increase_date = date[monthly_changes.index(greatest_increase)]
-        decrease_date = date[monthly_changes.index(greatest_decrease)]
+        increase_date = dates[monthly_changes.index(greatest_increase)]
+        decrease_date = dates[monthly_changes.index(greatest_decrease)]
         
-        print("Financial Analysis)")
+        print("Financial Analysis")
         print("----------------------------")
         print("Total Months: " + str(count))
         print("Total Profits: " + "$" + str(total_profit))
