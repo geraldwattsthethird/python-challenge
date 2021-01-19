@@ -22,12 +22,12 @@ total_profit_change = 0
 
 # Open PyBank with the CSV
 with open(PyBankcsv, "r") as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=",")
+    csv_reader = csv.reader(csvfile, delimiter=",")
 
-    header = next(csvreader)
+    header = next(csv_reader)
     
     #Start the Loop
-    for row in csvreader:
+    for row in csv_reader:
         
         # Count the number of months
         count = count + 1
