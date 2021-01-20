@@ -3,7 +3,7 @@ import os
 import csv
 
 # Import the csv file
-PyBankcsv = os.path.join(".", "Resources", "budget_data.csv")
+Bankcsvpath = os.path.join(",","Resources","budget_data.csv")
 
 # Define the variables and how they are contained
 dates = []
@@ -21,7 +21,7 @@ total_profit_change = 0
 
 
 # Open PyBank with the CSV
-with open(PyBankcsv, "r") as csvfile:
+with open(Bankcsvpath, "r", newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
 
     header = next(csv_reader)
