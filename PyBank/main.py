@@ -3,7 +3,7 @@ import os
 import csv
 
 # Import the csv file
-Bankcsvpath = os.path.join(",","Resources","budget_data.csv")
+Bankcsvpath = os.path.join("..","PyBank","Resources","budget_data.csv")
 
 # Define the variables and how they are contained
 dates = []
