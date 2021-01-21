@@ -28,13 +28,13 @@ with open(PyPoll_csv, "r") as csvfile:
     print(f"Total Votes: {total_votes}")
     print("------------------")
 
-    # Separate the votes by candidate
+    # Separate and count the votes by candidate
     khan = int(candidates.count("Khan"))
     correy = int(candidates.count("Correy"))
     li = int(candidates.count("Li"))
     otooley = int(candidates.count("O'Tooley"))
 
-    # Display the total votes as a percentage
+    # Display the total votes per candidate as a percentage
     khan_percentage = (khan/total_votes) * 100
     khan_percent = "{:.5}".format(khan_percentage)
     correy_percentage = (correy/total_votes) * 100
@@ -49,7 +49,7 @@ with open(PyPoll_csv, "r") as csvfile:
     print(f"Li: {li_percent}% ({li})")
     print(f"O'Tooley: {otooley_percent}% ({otooley})")
 
-    # Loop the candidate votes to find the winner
+    # Loop the candidate votes total to find the winner
     if khan > correy > li > otooley:
         winner = "Khan"
     elif correy > khan > li > otooley:
