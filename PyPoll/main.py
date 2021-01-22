@@ -36,13 +36,13 @@ with open(PyPoll_csv, "r") as csvfile:
 
     # Display the total votes per candidate as a percentage
     khan_percentage = (khan/total_votes) * 100
-    khan_percent = "{:.5}".format(khan_percentage)
+    khan_percent = "{:.3f}".format(khan_percentage)
     correy_percentage = (correy/total_votes) * 100
-    correy_percent = "{:.5}".format(correy_percentage)
+    correy_percent = "{:.3f}".format(correy_percentage)
     li_percentage = (li/total_votes) * 100
-    li_percent = "{:.5}".format(li_percentage)
+    li_percent = "{:.3f}".format(li_percentage)
     otooley_percentage = (otooley/total_votes) * 100
-    otooley_percent = "{:.5}".format(otooley_percentage)
+    otooley_percent = "{:.3f}".format(otooley_percentage)
 
     print(f"Khan: {khan_percent}% ({khan})")
     print(f"Correy: {correy_percent}% ({correy})")
